@@ -1,0 +1,61 @@
+* {
+    font-family: "Iosevka Nerd Font", monospace;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: none;
+}
+
+window {
+    background-color: rgba(30, 30, 46, 0.85);
+}
+
+button {
+    font-family: "Iosevka Nerd Font", monospace;
+    font-size: 14px;
+    border-radius: 12px;
+    border: 2px solid #313244;
+    background-color: #181825;
+    color: #cdd6f4;
+    margin: 10px;
+    transition: all 0.2s ease-in-out;
+    background-repeat: no-repeat;
+    background-position: center 20px;
+    background-size: 48px;
+    padding-top: 70px;
+}
+
+/* Hover state */
+button:focus,
+button:hover {
+    background-color: #313244;
+    border-color: #89b4fa;
+    color: #89b4fa;
+}
+
+/* Individual icons */
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"));
+}
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"));
+}
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/suspend.png"));
+}
+#hibernate {
+    background-image: image(url("/usr/share/wlogout/icons/hibernate.png"));
+}
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"));
+}
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"));
+}
+
+/* Hover accent colors */
+#lock:hover { border-color: #89b4fa; color: #89b4fa; }
+#logout:hover { border-color: #f9e2af; color: #f9e2af; }
+#suspend:hover { border-color: #b4befe; color: #b4befe; }
+#hibernate:hover { border-color: #cba6f7; color: #cba6f7; }
+#shutdown:hover { border-color: #f38ba8; color: #f38ba8; }
+#reboot:hover { border-color: #a6e3a1; color: #a6e3a1; }
