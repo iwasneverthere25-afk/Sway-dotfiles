@@ -1,0 +1,117 @@
+//-*- mode: jsonc -*-
+{
+    "layer": "top", 
+    "position": "top", 
+    "spacing": 4,
+    "margin-top": 3,
+    "margin-left": 5,
+    "margin-right": 5,
+
+    // Choose the order of the modules
+    "modules-left": [
+        "sway/workspaces",
+        "custom/sep",
+        "sway/window",
+        "custom/sep"
+    ],
+    "modules-center": [
+    ],
+
+    "modules-right": [
+        "custom/sep",
+        "custom/os",
+        "custom/sep",
+        "network",
+        "custom/sep",
+        "wireplumber",
+        "custom/sep",
+        "battery",
+        "custom/sep",
+        "clock",
+        "custom/sep",
+        "tray",
+        "custom/power",
+        "custom/sep"
+    ],
+
+    // Modules configuration
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{name}",
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "*" : 9
+        }
+    },
+    "sway/window" : {
+        "max-length": 40,
+        "seperate-outputs": false
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+        // "icons": {
+        //   "blueman": "bluetooth",
+        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+        // }
+    },
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "CPU: {usage}%",
+        "tooltip": false
+    },
+    "network": {
+        "format-wifi": "󰤨  {essid} ({signalStrength}%)",
+        "format-ethernet": "󰈀  {ifname}",
+        "format-disconnected": "󰤭  Disconnected",
+        "tooltip-format": "󰈀  {ifname} via {gwaddr}",
+        "tooltip-format-wifi": "󰤨  {essid} ({signalStrength}%)\nIP: {ipaddr}\nFreq: {frequency}MHz",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "alacritty --class floating_net -e /home/nick/.cargo/bin/impala-nm"
+    },
+    "wireplumber": {
+        "format": "󰕾 {volume}%",
+        "format-muted": "󰝟 Muted",
+        "on-click": "pavucontrol",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "scroll-step": 5
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "Bat: {capacity}% {icon} {time}",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "Bat {capacity}%",
+        "format-time": "{H}:{M}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "custom/os": {
+        "exec": "cat /etc/os-release | grep '^NAME=' | cut -d'=' -f2 | tr -d '\"'",
+        "interval": "once",
+        "format": "{}"
+    },
+    "custom/power": {
+        "format": "󰐥",
+        "tooltip": false,
+        "on-click": "wlogout -b 2"
+    },
+    "custom/sep": {
+        "format" : "|",
+        "interval" : 0
+    }
+}
