@@ -1,6 +1,6 @@
 # Sway Dotfiles
 
-
+![Desktop Preview](preview.png)
 
 ## 📦 Dependencies
 
